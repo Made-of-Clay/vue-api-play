@@ -19,11 +19,6 @@ import { valid, error, checkReq, checkValid } from '@/hooks/validation';
 
 export default defineComponent({
     setup() {
-        // [adam]: could also be in created() like in Options API version
-        for (const key in nameFields) {
-            valid[key] = null;
-        }
-
         return {
             formData,
             nameFieldsToKeep,

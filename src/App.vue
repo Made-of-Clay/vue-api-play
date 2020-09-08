@@ -6,6 +6,16 @@
             class="App__photo"
         />
         <MyForm foo="bar" />
+        <p>Simple test (w/ console open):</p>
+        <ul>
+            <li>Click button w/ empty fields to get error message</li>
+            <li>Notice error disappears when fields are typed in again</li>
+            <li>valid fields "POST" data to console.log</li>
+        </ul>
+        <p>
+            The data being posted is admittedly contrived, but that's not the
+            point.
+        </p>
     </div>
 </template>
 
@@ -30,8 +40,13 @@ export default {
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
+    margin: 60px auto 0;
+    max-width: 600px;
 }
 .App__photo {
     margin-bottom: 8px;
+}
+ul {
+    text-align: left;
 }
 </style>

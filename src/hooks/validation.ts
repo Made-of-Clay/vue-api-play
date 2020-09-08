@@ -1,11 +1,18 @@
 import { reactive, ref, watch } from '@vue/composition-api';
-import { formData } from './formData';
+import { formData, nameFields } from './formData';
 
 interface IndexableBootstrapState {
     [index: string]: boolean | null;
 }
 
-export const valid: IndexableBootstrapState = reactive({});
+const initValid: IndexableBootstrapState = {};
+
+// NOTE: watch out for nameField's .value trickiness (it's a ref, not reactive)
+for (const key in nameFields.value) {
+    initValid[key] = null;
+}
+
+export const valid: IndexableBootstrapState = reactive(initValid);
 export const error = ref('');
 
 export function checkReq(which: string): void {
