@@ -31,6 +31,7 @@ export default defineComponent({
     },
 
     methods: {
+        // [adam]: this is logic specific to the form and should remain *with* the form
         submit(event: Event) {
             event.preventDefault();
             this.checkValid();
